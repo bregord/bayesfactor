@@ -10,8 +10,8 @@ function calculateBayesFactor() {
     if (prior_p > 0 && prior_q > 0 && fpr >0 && sn>0) {
         let bayesFactor = (sn/fpr) ;
         res = bayesFactor*prior_p
-        let probability_result = oddsToProb((prior_p +(prior_p*bayesFactor))/prior_q)
-        document.getElementById("result").innerText = "Bayes Factor: " + bayesFactor.toFixed(3) + ". Odds:" + (prior_p+res)+":"+(prior_q )+ ". Probability of event given positive test: " + (probability_result*100)+ "%";
+        let probability_result = oddsToProb(((prior_p*bayesFactor))/prior_q)
+        document.getElementById("result").innerText = "Bayes Factor: " + bayesFactor.toFixed(3) + ". Odds:" + (res)+":"+(res+prior_q )+ ". Probability of event given positive test: " + (probability_result*100)+ "%";
 
     } else {
         document.getElementById("result").innerText = "Error: Likelihood values must be greater than 0.";

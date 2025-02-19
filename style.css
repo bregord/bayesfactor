@@ -1,0 +1,85 @@
+/*
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+*/
+
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    padding: 40px;
+}
+
+h1 {
+    font-size: 2em;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.step {
+    margin: 20px 0;
+}
+
+.step-number {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.step1-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffcc00; /* Yellow */
+}
+
+.step2-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00ff73; /* Yellow */
+}
+
+
+.step3-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00c8ff; /* Yellow */
+}
+
+
+p {
+    font-size: 1.2em;
+}
+
+.highlight-white {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.step:nth-child(2) .step-title {
+    color: #66cc66; /* Green */
+}
+
+.step:nth-child(3) .step-title {
+    color: #66ccff; /* Light blue */
+}
+
+/* MathJax Styling */
+mjx-container {
+    font-size: 1.2em;
+}

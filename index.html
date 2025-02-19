@@ -1,0 +1,107 @@
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayes Factor Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <h1>Bayes Factor Calculator</h1>
+    
+    
+    <p></p>Step 1.<>
+    <p>  </p>
+
+
+    <p>This is where you calulate the Bayes Factor itself</p>
+
+    <label for="sensitivity"> Sensitivity (as decimal) </label>
+    <input type="number" id="sensitivity" step="0.00001" min="0" max="1">
+    
+    <label for="fpr">False Positive Rate (e.g. 1 - Specificity)</label>
+    <input type="number" id="fpr" step="0.00001" min="0">
+    
+    <button onclick="calculateBayesFactor()">Calculate</button>
+    
+    <p id="result"></p>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayes' Rule Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1><u>Bayes' Rule, the snazzy way</u></h1>
+        <p> E.g. Calculating Bayes' Factor</p>
+
+        <div class="step">
+            <span class="step-number">Step 1)</span>
+            <span class="step1-title">Express the prior with odds</span>
+            <p>E.g. 10% chance of disease → (1:9) <span class="highlight-white">i.e. (1 case of disease):(9 cases without disease)</span></p>
+
+
+        </div>
+
+        <label for="prior_p">Number of cases in which event occurs:</label>
+        <input type="number" id="prior_p" min="0">
+        
+        <label for="prior_q">Number of cases in which event does NOT occur:</label>
+        <input type="number" id="prior_q" min="0">
+
+        <div class="step">
+            <span class="step-number">Step 2)</span>
+            <span class="step2-title">Compute Bayes' factor</span>
+            <p>E.g. 
+                \[
+                \frac{\text{Sensitivity}}{\text{False Positive Rate}} = \frac{P(\text{+ve Test} | \text{Disease})}{P(\text{+ve Test}| \text{No Disease})} = \frac{90\%}{9\%} = 10
+                \]
+            </p>
+        </div>
+
+
+        <label for="sensitivity"> Sensitivity (as decimal) </label>
+        <input type="number" id="sensitivity" step="0.00001" min="0" max="1">
+        
+        <label for="fpr">False Positive Rate (e.g. 1 - Specificity)</label>
+        <input type="number" id="fpr" step="0.00001" min="0">
+        <div class="step">
+            <span class="step-number">Step 3)</span>
+            <span class="step3-title">Multiply</span>
+            <p>
+                \[
+                (1:9) \times 10 = 10:9 \rightarrow \frac{10}{19} \approx 0.53
+                \]
+            </p>
+        </div>
+    
+        <div class="step">
+
+            <span class="step-number">Result:</span>
+            <button onclick="calculateBayesFactor()">Calculate</button>
+            <p id="result"></p>
+        </div>
+  
+    </div>
+
+        
+<script src="script.js"></script>
+
+
+
